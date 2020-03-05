@@ -26,9 +26,13 @@ class MrpWorkorder(models.Model):
         'Workcenter Status', related='workcenter_id.working_state',
         help='Technical: used in views only')
 
+    # SEQUAR: 2020-03-05
+    # changing `required=True` in `required=False`
+    # as in `rep_sequar/sq_mrp_workorders_group/models/mrp_workorder.py`
+    # every change here in this field should be copied "as is" in that file
     production_id = fields.Many2one(
         'mrp.production', 'Manufacturing Order',
-        index=True, ondelete='cascade', required=True, track_visibility='onchange',
+        index=True, ondelete='cascade', required=False, track_visibility='onchange',
         states={'done': [('readonly', True)], 'cancel': [('readonly', True)]})
     product_id = fields.Many2one(
         'product.product', 'Product',
