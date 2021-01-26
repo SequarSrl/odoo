@@ -422,5 +422,7 @@ return {
     ErrorDialog: ErrorDialog,
     WarningDialog: WarningDialog,
     disable: () => active = false,
+    getActive: () => {return active},
+    enable: () => active = true,
 };
 });
