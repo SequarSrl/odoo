@@ -1,7 +1,7 @@
 odoo.define('website.set_view_track', function (require) {
 "use strict";
 
-var CustomizeMenu = require('website.customizeMenu');
+var CustomizeMenu = require('web.Widget');
 var Widget = require('web.Widget');
 
 var TrackPage = Widget.extend({
